@@ -1,0 +1,37 @@
+<h1>Messages</h1>
+<div ng-controller="messagetransfer">
+        <div>
+            <form ng-submit="send()">
+                <input type="text" ng-model="receipient" placeholder="Receipent Name" required><br/><br/>
+                <input type="text" ng-model="title" placeholder="Title" required><br/><br/>
+                <textarea name="message" ng-model="msg" rows="10" cols="30" placeholder="Write message" required></textarea><br/><br/>
+        
+                <button type="submit" value="Send">Send</button>
+            </form>    
+        </div>
+        <br/>
+        <h1>History</h1>
+        <div>
+            <table border="1">
+                <tr>
+                    <th>Sender</th>
+                    <th>Recipient</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Time</th>
+                    <th>Important</th>
+                    <th>Action</th>
+                </tr>
+                <tr ng-repeat="msg in msgs track by $index">
+                    <td>{{msg.sender}}</td>
+                    <td>{{msg.recepient}}</td>
+                    <td>{{msg.title}}</td>
+                    <td>{{msg.description}}</td>
+                    <td>{{msg.time}}</td>
+                    <td>{{msg.important}}</td>
+                    <td><input type="button" value="View Details" ng-click="GetDetails($index)"></td>
+                </tr>
+        
+            </table>
+        </div>
+</div>

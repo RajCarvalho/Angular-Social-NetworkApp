@@ -1,0 +1,45 @@
+<h1>Message Details</h1>
+<div>
+    <input type="button" value="Back" ng-click="back()">
+    <input type="button" value="Mark As Important" ng-disabled="isDisabled" ng-click="important()">
+    <input type="button" value="Delete" ng-click="delete()">
+</div>
+<br/>
+<div>
+        <label>Receipient:</label>
+        <input type="text" name="msg.receipient" ng-model="mreceipient" disabled> <br/><br/>
+        <label>Title:</label>
+        <input type="text" ng-model="mtitle" disabled> <br/><br/>
+
+        <label>Message:</label>
+        <textarea ng-model="description" rows="10" cols="30"  disabled ></textarea> <br/><br/><br/>
+        <!-- <input type="text" ng-model="description" disabled > <br/><br/> -->
+        <label>Time:</label>
+        <input type="text" ng-model="time" disabled > <br/><br/>
+</div>
+
+<h1>
+    Reply
+</h1>
+<div>
+        <textarea ng-model="reply" rows="10" cols="30" placeholder="Write message" ></textarea> <br/>
+        <input type="button" value="Send" ng-click="sendResponse()">
+</div>
+<br/>
+<h1>Reply History</h1>
+        <div>
+            <table border="1">
+                <tr>
+                    <th>Sender</th>
+                    <th>Time</th>
+                    <th>Description</th>
+                </tr>
+                <tr ng-repeat="msg in allreply track by $index">
+                    <td>{{msg.sender}}</td>
+                    <!-- <td>{{msg.receiver}}</td> -->
+                    <td>{{msg.time}}</td>
+                    <td>{{msg.msg}}</td>
+                </tr>
+        
+            </table>
+        </div>

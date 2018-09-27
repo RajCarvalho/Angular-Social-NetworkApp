@@ -1,0 +1,16 @@
+.center {
+    margin: auto;
+    width: 70%;
+    padding: 5px;
+    height: 105%;
+}
+
+.fa {
+    font-size: 100px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.fa:hover {
+  color: darkblue;
+}

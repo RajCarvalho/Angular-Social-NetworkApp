@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular App</title>
+    <script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.5/angular-route.min.js"></script>
+    <script src="app.js"></script>
+<style>
+body
+{
+margin-top:70px;
+}
+</style>
+
+</head>
+<body ng-app="myApp" ng-controller="firstpage">
+<center>
+    <div ng-if="!status">
+        <a href="#/login" ng-model="login" ng-click="loginclick()">Login</a> |
+        <a href="#/signup" ng-model="signup" ng-click="signupclick()">Signup</a>  <!---->
+    </div>
+    <div ng-if="status">
+            <a href="#/home" ng-model="Home" >Home</a> |
+            <a href="#/profile" ng-model="Profile" >Profile</a> |
+            <a href="#/messages" ng-model="Messages">Messages</a>  | <!---->
+            <a href="" ng-model="Logout" ng-click="logout()">Logout</a>
+        </div>
+    <div ng-view="">
+
+    </div>
+    </center>
+</body>
+</html>
